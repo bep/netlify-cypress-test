@@ -1,8 +1,8 @@
 name: Debug
-on: deployment_status
-
+on:
+  pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: hmarr/debug-action@v2
+      - uses: hmarr/debug-action@v2
