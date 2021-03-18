@@ -1,8 +1,11 @@
 name: Debug
 on:
-  pull_request:
+  status
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/debug-action@v2
+      - id: debug
+        uses: hmarr/debug-action@v2
+      - run: echo "Success!"
+        if: github.event.pull_request && github.event.state == 'success'
