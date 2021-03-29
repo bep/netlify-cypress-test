@@ -3,9 +3,15 @@ on:
   status
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+    container: cypress/browsers:node12.13.0-chrome78-ff70
     steps:
-      - id: debug
-        uses: hmarr/debug-action@v2
-      - run: echo "Success!"
+      - uses: hmarr/debug-action@v2
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Cypress run
+        uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
+        with:
+          config: baseUrl=${{ github.event.target_url }}
