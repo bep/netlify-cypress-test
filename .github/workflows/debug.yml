@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: hmarr/debug-action@v2
       - uses: actions/checkout@v2
+        if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
           fetch-depth: 0
       - name: Cypress run
