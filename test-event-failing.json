@@ -3,10 +3,10 @@
   "branches": [
     {
       "commit": {
-        "sha": "4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec",
-        "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec"
+        "sha": "ac6b060c436fe61ce2e8357fb39057038c063f07",
+        "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/ac6b060c436fe61ce2e8357fb39057038c063f07"
       },
-      "name": "failing-test",
+      "name": "failing-test3",
       "protected": false
     }
   ],
@@ -31,29 +31,29 @@
       "type": "User",
       "url": "https://api.github.com/users/bep"
     },
-    "comments_url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec/comments",
+    "comments_url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/ac6b060c436fe61ce2e8357fb39057038c063f07/comments",
     "commit": {
       "author": {
-        "date": "2021-03-29T11:06:43Z",
+        "date": "2021-03-29T18:15:55Z",
         "email": "bjorn.erik.pedersen@gmail.com",
         "name": "Bjørn Erik Pedersen"
       },
       "comment_count": 0,
       "committer": {
-        "date": "2021-03-29T11:06:43Z",
+        "date": "2021-03-29T18:15:55Z",
         "email": "bjorn.erik.pedersen@gmail.com",
         "name": "Bjørn Erik Pedersen"
       },
-      "message": "This should fail",
+      "message": "Failing commit",
       "tree": {
-        "sha": "589666578a63cf6075c49aa63755648c40e3c6bd",
-        "url": "https://api.github.com/repos/bep/test-netlify-minimal/git/trees/589666578a63cf6075c49aa63755648c40e3c6bd"
+        "sha": "66073664a0ad3815887d9645437df0c08d467f9a",
+        "url": "https://api.github.com/repos/bep/test-netlify-minimal/git/trees/66073664a0ad3815887d9645437df0c08d467f9a"
       },
-      "url": "https://api.github.com/repos/bep/test-netlify-minimal/git/commits/4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec",
+      "url": "https://api.github.com/repos/bep/test-netlify-minimal/git/commits/ac6b060c436fe61ce2e8357fb39057038c063f07",
       "verification": {
-        "payload": "tree 589666578a63cf6075c49aa63755648c40e3c6bd\nparent 026432c909593b3c7dff2f18cb8ae460994aaee2\nauthor Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com> 1617016003 +0200\ncommitter Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com> 1617016003 +0200\n\nThis should fail\n",
+        "payload": "tree 66073664a0ad3815887d9645437df0c08d467f9a\nparent ec116a53ba0dda6e5f157aee4f1d8fb84818cfbd\nauthor Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com> 1617041755 +0200\ncommitter Bjørn Erik Pedersen <bjorn.erik.pedersen@gmail.com> 1617041755 +0200\n\nFailing commit\n",
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQEzBAABCAAdFiEELou904TopoqKZ4YYMw5uK9SFnY8FAmBhtMYACgkQMw5uK9SF\nnY+E6QgAx6PgCa1Mz5DmQCoo4eJkaWweMVG7ZrwIk7waTyZkAgsWdCPH6q56UmyZ\n9S2JKhgcO+6vxq2ZrUq1kIo3PRBXHOTcqG/dn1DavdmsQ0cohqO9SVPty2kcM9RP\nwJ9PUKV3EiQ+/uOyhEmV7fGvSthBLnw+2UHtDtFt5o8M9wtv3ABVgfMNCjBxLU4l\nob8xJ5V2ZHPjVZhvjWgDwxvB5ZkfWIyHTH2hOSegsq+ywPQBu1zJ6a+smFdZgpyv\naVMDkL4g97HoWP+fxets31g9CCdAh6k+94kVIPtGBM2dxhXhfblccetE5Y4LNeGZ\n/2LDohclC4/Be/NNvc+D4f2ApaZNuw==\n=EveP\n-----END PGP SIGNATURE-----",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQEzBAABCAAdFiEELou904TopoqKZ4YYMw5uK9SFnY8FAmBiGV4ACgkQMw5uK9SF\nnY+rywf/bBZdi2OhzVwuLxRqFJFYOZkX0X3pOzLFfnHpPgV8vCwQpK1PMossoROR\nOitT8lX4uNFmttvQ0M7OaWVexM4eaCJTfaTnp5NJ3VPaQ/Y0z3gFyvDMefIRzSJq\nLVIYT6Nm7OOefOHqh3nJrp43dkZOywE0U6lQgGXMT3zHUYR9a0flfsVmnDSBqtrh\nhs4CrH1C0+m+Jo3bgaVZQYmXZBUW7gd1S6men5MYq3A0gmKnvgj7AbmHEpVwNiKJ\n7Q96Uzpr5JuSLZXEgUI5L/KAF9GNyv+L5lDae4LLRoawURhdRGVaVTt5u3y0XDp1\njkLq4v/3wiacJNH2bDpRLzwn50Fkiw==\n=UlyN\n-----END PGP SIGNATURE-----",
         "verified": true
       }
     },
@@ -77,22 +77,22 @@
       "type": "User",
       "url": "https://api.github.com/users/bep"
     },
-    "html_url": "https://github.com/bep/test-netlify-minimal/commit/4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec",
-    "node_id": "MDY6Q29tbWl0MzQ5MDI0Mjg0OjRiYjZkMmRhOThiNDU1ODA1NGQ5YzBiNThjY2RmN2VhZGU5YTliZWM=",
+    "html_url": "https://github.com/bep/test-netlify-minimal/commit/ac6b060c436fe61ce2e8357fb39057038c063f07",
+    "node_id": "MDY6Q29tbWl0MzQ5MDI0Mjg0OmFjNmIwNjBjNDM2ZmU2MWNlMmU4MzU3ZmIzOTA1NzAzOGMwNjNmMDc=",
     "parents": [
       {
-        "html_url": "https://github.com/bep/test-netlify-minimal/commit/026432c909593b3c7dff2f18cb8ae460994aaee2",
-        "sha": "026432c909593b3c7dff2f18cb8ae460994aaee2",
-        "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/026432c909593b3c7dff2f18cb8ae460994aaee2"
+        "html_url": "https://github.com/bep/test-netlify-minimal/commit/ec116a53ba0dda6e5f157aee4f1d8fb84818cfbd",
+        "sha": "ec116a53ba0dda6e5f157aee4f1d8fb84818cfbd",
+        "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/ec116a53ba0dda6e5f157aee4f1d8fb84818cfbd"
       }
     ],
-    "sha": "4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec",
-    "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec"
+    "sha": "ac6b060c436fe61ce2e8357fb39057038c063f07",
+    "url": "https://api.github.com/repos/bep/test-netlify-minimal/commits/ac6b060c436fe61ce2e8357fb39057038c063f07"
   },
   "context": "deploy/netlify",
-  "created_at": "2021-03-29T11:07:10+00:00",
+  "created_at": "2021-03-29T18:16:10+00:00",
   "description": "Deploy preview ready!",
-  "id": 12625874341,
+  "id": 12630821389,
   "name": "bep/test-netlify-minimal",
   "repository": {
     "archive_url": "https://api.github.com/repos/bep/test-netlify-minimal/{archive_format}{/ref}",
@@ -170,9 +170,9 @@
     },
     "private": false,
     "pulls_url": "https://api.github.com/repos/bep/test-netlify-minimal/pulls{/number}",
-    "pushed_at": "2021-03-29T11:07:03Z",
+    "pushed_at": "2021-03-29T18:16:04Z",
     "releases_url": "https://api.github.com/repos/bep/test-netlify-minimal/releases{/id}",
-    "size": 12,
+    "size": 67,
     "ssh_url": "git@github.com:bep/test-netlify-minimal.git",
     "stargazers_count": 0,
     "stargazers_url": "https://api.github.com/repos/bep/test-netlify-minimal/stargazers",
@@ -183,7 +183,7 @@
     "tags_url": "https://api.github.com/repos/bep/test-netlify-minimal/tags",
     "teams_url": "https://api.github.com/repos/bep/test-netlify-minimal/teams",
     "trees_url": "https://api.github.com/repos/bep/test-netlify-minimal/git/trees{/sha}",
-    "updated_at": "2021-03-29T11:06:16Z",
+    "updated_at": "2021-03-29T18:07:13Z",
     "url": "https://api.github.com/repos/bep/test-netlify-minimal",
     "watchers": 0,
     "watchers_count": 0
@@ -208,8 +208,8 @@
     "type": "Bot",
     "url": "https://api.github.com/users/netlify%5Bbot%5D"
   },
-  "sha": "4bb6d2da98b4558054d9c0b58ccdf7eade9a9bec",
+  "sha": "ac6b060c436fe61ce2e8357fb39057038c063f07",
   "state": "success",
-  "target_url": "https://deploy-preview-7--happy-babbage-8953f3.netlify.app",
-  "updated_at": "2021-03-29T11:07:10+00:00"
+  "target_url": "https://deploy-preview-9--happy-babbage-8953f3.netlify.app",
+  "updated_at": "2021-03-29T18:16:10+00:00"
 }
