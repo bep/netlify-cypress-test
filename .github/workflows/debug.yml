@@ -6,7 +6,6 @@ jobs:
     runs-on: ubuntu-18.04
     container: cypress/browsers:node12.13.0-chrome78-ff70
     steps:
-      - uses: hmarr/debug-action@v2
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
@@ -15,15 +14,19 @@ jobs:
         uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
         id: cypress
         # Continue the build in case of an error, as we need to set the
-        # commit status in the next step, both in case of success and failure.
+        # commit status in the next step, both in case of success and failure
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
           config: baseUrl=${{ github.event.target_url }}
-      - uses: LouisBrunner/checks-action@v1.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-        name: Cypress Integration Tests
+      - uses: hmarr/debug-action@v2
+        if: always()
+      - name: Create commit status
+        id: create_status
         if: always() && github.event.context == 'deploy/netlify' && github.event.state == 'success'
-        conclusion: ${{ steps.cypress.outcome }}
-        output: |
-          {"summary": "TODO"}
+        run: |
+          curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.branches.commit.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
+            "context": "tests",
+            "state": "${{ steps.cypress.outcome}}",
+            "description": "Cypress Test Results",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
