@@ -13,12 +13,17 @@ jobs:
           fetch-depth: 0
       - name: Cypress run
         uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
+        id: cypress
         # Continue the build in case of an error, as we need to set the
-        # commit status in the next step, both in case of success and failure
-        continue-on-error: true
+        # commit status in the next step, both in case of success and failure.
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
           config: baseUrl=${{ github.event.target_url }}
-      - name: Cypress status
-        run: |
-          echo Cypress finished with: ${{ steps.cypress.outcome }}
+      - uses: LouisBrunner/checks-action@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        name: Cypress Integration Tests
+        if: always() && github.event.context == 'deploy/netlify' && github.event.state == 'success'
+        conclusion: ${{ steps.cypress.outcome }}
+        output: |
+          {"summary": "TODO"}
