@@ -8,4 +8,4 @@ jobs:
       - id: debug
         uses: hmarr/debug-action@v2
       - run: echo "Success!"
-        if: github.event.context === 'deploy/netlify' && github.event.state == 'success'
+        if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
