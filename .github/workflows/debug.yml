@@ -8,12 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
-      - name: Run Cypress Tests
+      - name: Run Cypress Tests on Chrome
         uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
         id: cypress 
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
           config: baseUrl=${{ github.event.target_url }}
+          browser: chrome
       - name: Create initial commit status
         if: always() && github.event.context == 'deploy/netlify' && github.event.state != 'success'
         run: |
