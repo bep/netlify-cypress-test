@@ -29,6 +29,6 @@ jobs:
           curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
             "context": "Cypress Tests",
             "state": "${{ steps.cypress.outcome }}",
-            "description": "Test Results Ready!",
+            "description": "Test Results",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
