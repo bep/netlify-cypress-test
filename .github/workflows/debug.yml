@@ -1,4 +1,4 @@
-name: Debug
+name: Cypress
 on:
   status
 jobs:
@@ -8,25 +8,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
-        with:
-          fetch-depth: 0
-      - name: Cypress run
+      - name: Run Cypress Tests
         uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
-        id: cypress
-        # Continue the build in case of an error, as we need to set the
-        # commit status in the next step, both in case of success and failure
+        id: cypress 
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
         with:
           config: baseUrl=${{ github.event.target_url }}
-      - uses: hmarr/debug-action@v2
-        if: always()
-      - name: Create commit status
-        id: create_status
+      - name: Create initial commit status
+        if: always() && github.event.context == 'deploy/netlify' && github.event.state != 'success'
+        run: |
+          curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
+            "owner": "bep",
+            "context": "Cypress Tests",
+            "state": "${{ github.event.state }}",
+            "description": "Test Results Pending",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
+      - name: Create final commit status
         if: always() && github.event.context == 'deploy/netlify' && github.event.state == 'success'
         run: |
           curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
-            "context": "tests",
-            "state": "${{ steps.cypress.outcome}}",
-            "description": "Cypress Test Results",
+            "owner": "bep",
+            "context": "Cypress Tests",
+            "state": "${{ steps.cypress.outcome }}",
+            "description": "Test Results",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
