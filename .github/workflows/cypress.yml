@@ -1,0 +1,34 @@
+name: Cypress
+on:
+  status
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container: cypress/browsers:node12.13.0-chrome78-ff70
+    steps:
+      - uses: actions/checkout@v2
+        if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
+        id: cypress 
+        if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
+        with:
+          config: baseUrl=${{ github.event.target_url }}
+      - name: Create initial commit status
+        if: always() && github.event.context == 'deploy/netlify' && github.event.state != 'success'
+        run: |
+          curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
+            "context": "Cypress Tests",
+            "state": "${{ github.event.state }}",
+            "description": "Test Results Pending",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
+      - name: Create final commit status
+        if: always() && github.event.context == 'deploy/netlify' && github.event.state == 'success'
+        run: |
+          curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{github.event.sha || github.sha}} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
+            "context": "Cypress Tests",
+            "state": "${{ steps.cypress.outcome }}",
+            "description": "Test Results",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'

@@ -1,0 +1,22 @@
+{
+  "name": "test-netlify-minimal",
+  "version": "1.0.0",
+  "description": "Just a minimal repo to test out some build issues with Netlify. Nothing useful.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bep/test-netlify-minimal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bep/test-netlify-minimal/issues"
+  },
+  "homepage": "https://github.com/bep/test-netlify-minimal#readme",
+  "devDependencies": {
+    "cypress": "^6.8.0"
+  }
+}
