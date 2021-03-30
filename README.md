@@ -11,8 +11,6 @@ See the GitHub Action [workflow file](.github/workflows/cypress.yml). This workf
 The workflow can be tested with [Ack](https://github.com/nektos/act) locally:
 
 ```bash
-npm -g install static-server
-static-server public
 act status -e test-event.json
 ```
 
