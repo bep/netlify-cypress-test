@@ -5,8 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     container:
-      image: cypress/browsers:node12.13.0-chrome78-ff70
-      options: --ipc=host
+      image: cypress/included:4.11.0
     steps:
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
