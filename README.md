@@ -1,6 +1,6 @@
 Just a minimal repo to set up [Cypress](https://www.cypress.io/) integration tests running in a GitHub Action after a successful [Netlify](https://www.netlify.com/) preview build.
 
-Why not run these tests on Netlify, you ask? I tried, but there are several reasons why running these on GitHub is better:
+**Why not run these tests on Netlify, you ask? I tried, but there are several reasons why running these on GitHub is better:**
 
 * There are no (known) way to run tests on Netlify on the published site _and_ fail the build.
 * Setting up the Cypress environment can be a hassle -- there are ready-to-use GitHub Actions with matching Docker containers for this.
