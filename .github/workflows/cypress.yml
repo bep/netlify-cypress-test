@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     container:
-      image: cypress/included:4.11.0
+      image: cypress/base:12
     steps:
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
