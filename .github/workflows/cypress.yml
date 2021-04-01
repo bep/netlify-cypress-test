@@ -9,6 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         if: github.event.context == 'deploy/netlify' && github.event.state == 'success'
+        with:
+          ref: ${{github.event.sha || github.sha}}
       - name: Run Cypress Tests
         uses: cypress-io/github-action@b900bb785402701942376bc3a5e649074b532f88
         id: cypress 
